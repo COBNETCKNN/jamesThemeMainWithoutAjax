@@ -9,7 +9,7 @@
     </a>
     <div class="grid lg:grid-cols-6 gap-1 h-max pb-10">
         <!-- LEFT SIDE -->
-        <div class="hidden lg:block md:col-span-2 lg:col-span-1">
+        <div class="hidden lg:block md:col-span-2 lg:col-span-1 relative z-50">
             <div class="leftSidebar">
                 <!-- Logo -->
                 <div class="logoWrapper">
@@ -26,108 +26,136 @@
                     </a>
                 </div>
                 <!-- Categories in the sidebar -->
-                <div class="categoriesSidebar">
-                    <?php
-                        $parent_cats = get_categories(array('parent' => 0));
-                    ?>
-                    <?php if( ! empty( $parent_cats ) ) :
-                    
-                    foreach( $parent_cats as $parent_cat ) :
-                        $child_cats = get_categories(array('parent' => $parent_cat->term_id));
-                    ?>
+                <div class="categoriesSidebar flex items-center justify-start min-h-[90vh]">
+                    <div class="sidebar_indicator relative h-[240px] w-[80px]">
+                            <!-- Filter button -->
+                            <div class="categoriesSidebar_filter">
+                                <div class="categoriesSidebar_filter__button h-[30px] w-[30px] p-2 absolute top-6 left-4">
+                                </div>
+                                <!-- Filter popup -->
+                                <div class="nonvisible categoriesSidebar_filter__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
+                                    <div class="categoriesSidebar_popup__content p-4">
+                                        <h4 class="categoriesSidebar_filter__heading font-avenir text-white text-lg font-bold uppercase border-b-2 border-gray-500 mb-2">Filters</h4>
+                                        <?php
+                                            $categories = get_categories();
 
-                            <h3 class="sidebarTitle p-1.5 w-fit bg-black text-white font-bold font-avenir uppercase text-sm italic"><?php echo $parent_cat->name; ?></h3>
-
-                            <?php if( $child_cats ) : ?>
-
-                                <ul class="child-cats flex flex-wrap w-10/12 border-solid border-2 border-gray-100 rounded-lg shadow-md py-1">
-
-                                    <?php 
-
-                                    foreach( $child_cats as $child_cat ) :
-
-                                    $subcategory_link = get_category_link($child_cat->term_id);
-                                    ?>
-
-                                        <li class="py-2">
-
-                                            <a href="<?php echo $subcategory_link; ?>" class="w-fit block py-1 px-3 mr-3 font-medium font-avenir shadow-md <?php echo 'subCategory' . '-' . $child_cat->slug?>"><?php echo $child_cat->name; ?></a>
+                                            if (!empty($categories)) {
+                                                echo '<ul>';
                                                 
-                                        </li>
+                                                foreach ($categories as $category) {
+                                                    $category_link = get_category_link($category->term_id);
+                                                    
+                                                    echo '<li class="py-0.5 text-avenir font-normal text-base">
+                                                    <a class="text-white category-'. $category->slug .'" href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a>
+                                                    </li>';
+                                                }
 
-                                    <?php endforeach; ?>
-                                    
-                                </ul>
+                                                echo '</ul>';
+                                            }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Newsletter Button -->
+                            <div class="categoriesSidebar_newsletter__wrapper">
+                            <?php 
+                                $args = array(
+                                    'page_id' => 214,
+                                );
 
-                            <?php endif; ?>
+                                $newsletterPageQuery = new WP_Query($args);
 
-                        <?php endforeach; endif; ?>
+
+                                while($newsletterPageQuery->have_posts()){
+                                    $newsletterPageQuery->the_post(); ?> 
+                                        <!-- Newsletter image -->
+                                            <div class="categoriesSidebar_newsletter__img flex justify-center">
+                                            <?php
+                                                $post_thumbnail = get_the_post_thumbnail(get_the_ID(), 'newsletter-icon');
+
+                                                if ($post_thumbnail) {
+                                                echo $post_thumbnail;
+                                            }
+                                            
+                                            ?>
+                                            </div>
+                                            <div class="categoriesSidebar_newsletter_text font-avenir tracking-widest">
+                                                <?php 
+                                                    $textBelowButton = get_field('newsletter_text_below_button_in_sidebar');
+                                                    echo $textBelowButton; 
+                                                ?>
+                                            </div>
+                                    <?php } 
+                                        wp_reset_postdata();
+                                    ?>
+                            </div>
+                            <!-- Conversion Button -->
+                            <div class="categoriesSidebar_conversion">
+                                <!-- Conversion Button -->
+                                <div class="categoriesSidebar_conversion__button h-[30px] w-[30px] p-2 absolute bottom-6 left-4">
+                                </div>
+                                <!-- Conversion Popup -->
+                                <div class="hidden categoriesSidebar_conversion__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
+                                    <div class="categoriesSidebar_popup__content p-4">
+                                        <div class="categoriesSidebar_conversion__pages">
+                                        <?php 
+                                            wp_nav_menu(
+                                                array(
+                                                'theme_location' => 'header-menu',
+                                                'container_class' => 'text-white font-bold text-lg font-avenir',
+                                                )
+                                            );
+                                            ?>
+                                        </div>
+                                        <div class="categoriesSidebar_conversion__socialMedia flex justify-between items-center mt-5">
+                                        <?php 
+                                            $args = array(
+                                                'page_id' => 44,
+                                            );
+
+                                            $socialMediaButtonsQuery = new WP_Query($args);
+
+                                            while($socialMediaButtonsQuery->have_posts()){
+                                                $socialMediaButtonsQuery->the_post(); ?>
+
+                                            <?php 
+                                            // Check rows exists.
+                                            if( have_rows('social_media_buttons') ):
+
+                                                // Loop through rows.
+                                                while( have_rows('social_media_buttons') ) : the_row();
+
+                                                    // Load sub field value.
+                                                    $socialMediaImage = get_sub_field('social_media_icon');
+                                                    $socialMediaLink = get_sub_field('social_media_link');
+
+                                                    echo "<a href='".$socialMediaLink."'>";
+                                                    echo wp_get_attachment_image( $socialMediaImage, 'social-media-icons' ); 
+                                                    echo "</a>";
+                                                    ?>
+                                                        
+                                                    <?php
+                                                endwhile;
+                                            endif;
+
+                                            ?>
+                                            <?php } 
+                                                wp_reset_postdata();
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
                 </div>
-                <!-- Newsletter Sidebar -->
-                <?php get_template_part( 'partials/newsletter', 'sidebar' ); ?>
             </div>
         </div>
         <!-- RIGHT SIDE -->
+        <!-- "Join the newsletter" button in header -->
         <div class="md:col-span-5 lg:col-span-5">
-            <div class="hidden md:grid md:grid-cols-1 xl:grid-cols-2 gap-4 h-20">
-                <!-- Newsletter area -->
-                <div class="flex justify-start items-center hidden xl:flex">
-                <?php 
-                    $shortcode = get_field('newsletter_shortcode', 214);
-                    echo do_shortcode($shortcode);
-                ?>
-                </div>
-                <!-- Pages and Social Media -->
-                <div class="flex md:justify-end xl:justify-between items-center">
-                    <div class="menuItems">
-                        <?php 
-                        wp_nav_menu(
-                            array(
-                            'theme_location' => 'header-menu',
-                            'container_class' => 'headerMenuWrapper font-avenir font-medium md:text-sm lg:text-base tracking-wide italic',
-                            )
-                        );
-                        ?>
-                    </div>
-                    <div class="socialMediaIcons flex justify-center items-center mr-3">
-                        <?php 
-                        $args = array(
-                            'page_id' => 44,
-                        );
-
-                        $socialMediaButtonsQuery = new WP_Query($args);
-
-                        while($socialMediaButtonsQuery->have_posts()){
-                            $socialMediaButtonsQuery->the_post(); ?>
-
-                        <?php 
-                        // Check rows exists.
-                        if( have_rows('social_media_buttons') ):
-
-                            // Loop through rows.
-                            while( have_rows('social_media_buttons') ) : the_row();
-
-                                // Load sub field value.
-                                $socialMediaImage = get_sub_field('social_media_icon');
-                                $socialMediaLink = get_sub_field('social_media_link');
-
-                                echo "<a href='".$socialMediaLink."'>";
-                                 echo wp_get_attachment_image( $socialMediaImage, 'social-media-icons' ); 
-                                echo "</a>";
-                                ?>
-                                     
-                                <?php
-                            endwhile;
-                        endif;
-
-                        ?>
-                        <?php } 
-                            wp_reset_postdata();
-                        ?>
-
-                    </div>
-
-                </div>
+            <div class="hidden md:grid gap-4 h-20 flex justify-end">
+                <button class="newsletterModal_open newsletterRedirect_wrapper h-[75px] w-[324px]">
+                </button>
             </div>
             <!-- Blog posts -->
             <div id="response"  class="ajax-posts">

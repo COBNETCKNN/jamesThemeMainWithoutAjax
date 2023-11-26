@@ -1,1 +1,97 @@
-function goBack(){window.history.back()}jQuery(document).ready((function(e){e("#modal").modal().on("shown",(function(){e("body").css("overflow","hidden"),e(".modalRedirect").addClass("visible")})).on("hidden",(function(){e("body").css("overflow","auto"),e(".modalRedirect").removeClass("visible")})),e(".examplePosts_grid").masonry({itemSelector:".imageContent",columnWidth:50,isResizable:!0}),e(".modal_wrapper").click((function(){e("#modal").removeClass("modal"),e("body").css("overflow","auto"),e(".modal_wrapper").addClass("modal_wrapper__hide")})),e(document).click((function(o){e(o.target).closest(".singleModal").length||(e("body").find(".singleModal").removeClass("visible"),e(".modalRedirect_close__button").find(".singleModal").removeClass("visible"))})),e(".newsletterModal_open").click((function(){e(".newsletterModal").addClass("visible"),e("body").css("overflow","hidden")})),e(".newsletterModal_close").click((function(){e(".newsletterModal").removeClass("visible"),e("body").css("overflow","auto")})),e(".hamburger-wrapper").on("click",(function(){e(".hamburger-menu").toggleClass("animate"),e(".mobile-menu-overlay").toggleClass("visible"),e(".blogPostsWrapper").addClass("nonvisible"),e(".hamburger-wrapper").addClass("nonvisible"),e(".copywritingExamplesAjax-posts").addClass("nonvisible")})),e(".mobile-menu-overlay > ul > li > a").on("click",(function(){e(".hamburger-menu").removeClass("animate"),e(".mobile-menu-overlay").removeClass("visible"),e(".blogPostsWrapper").removeClass("nonvisible"),e(".hamburger-wrapper").removeClass("nonvisible")})),e(".closeHamburger").on("click",(function(){e(".hamburger-menu").removeClass("animate"),e(".mobile-menu-overlay").removeClass("visible"),e(".blogPostsWrapper").removeClass("nonvisible"),e(".hamburger-wrapper").removeClass("nonvisible"),e(".copywritingExamplesAjax-posts").removeClass("nonvisible")})),e(".categories_icon").on("click",(function(){e(".mobileCategories_wrapper").toggleClass("visible"),e(".examplesMobileCategories_wrapper").toggleClass("visible"),e("body").css("overflow","hidden")})),e(".close_mobileCategories__wrapper").on("click",(function(){e(".mobileCategories_wrapper").removeClass("visible"),e(".examplesMobileCategories_wrapper").removeClass("visible"),e("body").css("overflow","auto")})),e(".modalPost_close").on("click",(function(){e("#modal").hide(),e("body").css("overflow","auto"),e(".modalRedirect").removeClass("visible")})),e(".js-filter-item").on("click",(function(){e(".mobileCategories_wrapper").removeClass("visible"),e("body").css("overflow","auto")})),e(".cat-list_item").on("click",(function(){e(".examplesMobileCategories_wrapper").removeClass("visible"),e("body").css("overflow","auto")})),e(".view-post").on("click",(function(){e(".modalRedirect_close__button").addClass("visible")})),e(".modalRedirect").on("click",(function(){e(".modalRedirect_close__button").removeClass("visible")})),e(".modalRedirect_close__button").on("click",(function(){e(".modalRedirect_close__button").removeClass("visible")}))}));
+jQuery(document).ready(function (jQuery) {
+  jQuery('#modal').modal().on('shown', function () {
+    jQuery('body').css('overflow', 'hidden');
+    jQuery('.modalRedirect').addClass('visible');
+  }).on('hidden', function () {
+    jQuery('body').css('overflow', 'auto');
+    jQuery('.modalRedirect').removeClass('visible');
+  });
+  jQuery('.examplePosts_grid').masonry({
+    // options
+    itemSelector: '.imageContent',
+    columnWidth: 50,
+    isResizable: true
+  });
+  jQuery('.modal_wrapper').click(function () {
+    jQuery('#modal').removeClass('modal');
+    jQuery('body').css('overflow', 'auto');
+    jQuery('.modal_wrapper').addClass('modal_wrapper__hide');
+  });
+  jQuery(document).click(function (event) {
+    var url = '<?php echo home_url(); ?>';
+    //if you click on anything except the modal itself or the "open modal" link, close the modal
+    if (!jQuery(event.target).closest(".singleModal").length) {
+      jQuery("body").find(".singleModal").removeClass("visible");
+      jQuery(".modalRedirect_close__button").find(".singleModal").removeClass("visible");
+    }
+  });
+
+  /* Newsletter modal */
+  jQuery(".newsletterModal_open").click(function () {
+    jQuery(".newsletterModal").addClass("visible");
+    jQuery('body').css('overflow', 'hidden');
+  });
+  jQuery(".newsletterModal_close").click(function () {
+    jQuery(".newsletterModal").removeClass("visible");
+    jQuery('body').css('overflow', 'auto');
+  });
+
+  // hamburger menu for mobile
+  (function (event) {
+    jQuery('.hamburger-wrapper').on('click', function () {
+      jQuery('.hamburger-menu').toggleClass('animate');
+      jQuery('.mobile-menu-overlay').toggleClass('visible');
+      jQuery('.blogPostsWrapper').addClass('nonvisible');
+      jQuery('.hamburger-wrapper').addClass('nonvisible');
+      jQuery('.copywritingExamplesAjax-posts').addClass('nonvisible');
+    });
+    jQuery('.mobile-menu-overlay > ul > li > a').on('click', function () {
+      jQuery('.hamburger-menu').removeClass('animate');
+      jQuery('.mobile-menu-overlay').removeClass('visible');
+      jQuery('.blogPostsWrapper').removeClass('nonvisible');
+      jQuery('.hamburger-wrapper').removeClass('nonvisible');
+    });
+    jQuery('.closeHamburger').on('click', function () {
+      jQuery('.hamburger-menu').removeClass('animate');
+      jQuery('.mobile-menu-overlay').removeClass('visible');
+      jQuery('.blogPostsWrapper').removeClass('nonvisible');
+      jQuery('.hamburger-wrapper').removeClass('nonvisible');
+      jQuery('.copywritingExamplesAjax-posts').removeClass('nonvisible');
+    });
+    jQuery('.categories_icon').on('click', function () {
+      jQuery('.mobileCategories_wrapper').toggleClass('visible');
+      jQuery('.examplesMobileCategories_wrapper').toggleClass('visible');
+      jQuery('body').css('overflow', 'hidden');
+    });
+    jQuery('.close_mobileCategories__wrapper').on('click', function () {
+      jQuery('.mobileCategories_wrapper').removeClass('visible');
+      jQuery('.examplesMobileCategories_wrapper').removeClass('visible');
+      jQuery('body').css('overflow', 'auto');
+    });
+    jQuery('.modalPost_close').on('click', function () {
+      jQuery('#modal').hide();
+      jQuery('body').css('overflow', 'auto');
+      jQuery('.modalRedirect').removeClass('visible');
+    });
+    jQuery('.js-filter-item').on('click', function () {
+      jQuery('.mobileCategories_wrapper').removeClass('visible');
+      jQuery('body').css('overflow', 'auto');
+    });
+    jQuery('.cat-list_item').on('click', function () {
+      jQuery('.examplesMobileCategories_wrapper').removeClass('visible');
+      jQuery('body').css('overflow', 'auto');
+    });
+    jQuery('.view-post').on('click', function () {
+      jQuery('.modalRedirect_close__button').addClass('visible');
+    });
+    jQuery('.modalRedirect').on('click', function () {
+      jQuery('.modalRedirect_close__button').removeClass('visible');
+    });
+    jQuery('.modalRedirect_close__button').on('click', function () {
+      jQuery('.modalRedirect_close__button').removeClass('visible');
+    });
+  })();
+});
+function goBack() {
+  window.history.back();
+}

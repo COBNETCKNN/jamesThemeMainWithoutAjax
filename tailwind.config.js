@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: { 
         'avenir': '#030212',
+        'darkBlue' : '#18202D',
     },
     },
   },
