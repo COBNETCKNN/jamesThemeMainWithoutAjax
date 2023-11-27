@@ -68,7 +68,7 @@ function remove_editor() {
   add_action('admin_init', 'remove_editor'); */
 
 // Adding custom image sizes
-add_image_size( 'logo-size', 180, 60, true);
+add_image_size( 'logo-size', 200, 60, true);
 add_image_size('social-media-icons', 30, 30, true);
 add_image_size('modal-thumbnail', 450, 250, true);
 add_image_size('newsletter-icon', 45, 45, true);

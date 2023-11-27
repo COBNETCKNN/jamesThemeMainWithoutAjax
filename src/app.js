@@ -105,6 +105,34 @@ jQuery(document).ready(function(jQuery){
             jQuery('.modalRedirect_close__button').removeClass('visible');
         });
     })();
+
+    // new sidebar
+    jQuery(".categoriesSidebar_filter__button").click(function(){
+        jQuery(".categoriesSidebar_filter__popup").removeClass("nonvisible");
+        jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
+        jQuery('body').css('overflow', 'hidden');
+    });
+
+    jQuery(".categoriesSidebar_overlay").click(function(){
+        jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
+        jQuery(".categoriesSidebar_overlay").addClass("nonvisible");
+        jQuery('body').css('overflow', 'auto');
+    });
+
+    jQuery(".categoriesSidebar_conversion__button").click(function(){
+        jQuery(".categoriesSidebar_conversion__popup").removeClass("nonvisible");
+        jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
+        jQuery('body').css('overflow', 'hidden');
+    });
+
+    jQuery(".categoriesSidebar_overlay").click(function(){
+        jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
+        jQuery(".categoriesSidebar_overlay").addClass("nonvisible");
+        jQuery('body').css('overflow', 'auto');
+    });
+
+
+
 });
 
 function goBack() {

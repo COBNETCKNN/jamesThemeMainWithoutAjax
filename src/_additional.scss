@@ -1,0 +1,370 @@
+// sidebar category items
+.category-advertisement {
+    color: #FFB708;
+}
+
+.category-search-engine-optimization {
+    color: #93FD31;
+}
+
+.category-public-relations {
+    color: #4324FB;
+}
+
+.category-brand {
+    color: #a78bfa;
+}
+
+.category-content {
+    color: #E62CAF;
+}
+
+.category-creative {
+    color: #8F30E4;
+}
+
+.category-copywriting {
+    color: #EDFD31;
+}
+
+.category-landing-page {
+    color: #be123c;
+}
+
+.category-referral {
+    color: #FCB0F3;
+}
+
+.category-retention {
+    color: #7FFFD4;
+}
+
+.category-sales {
+    color: #FF4F00;
+}
+
+.category-socials {
+    color: #31F1FD;
+}
+
+// styling border for blog post cards
+.blogPostCard-advertisement {
+    border: 8px solid #FFB708; }
+    .blogPostCard-advertisement:before, .blogPostCard-advertisement:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-advertisement:before {
+      border-bottom: 8px solid #FFB708;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-advertisement:after {
+      border-top: 8px solid #FFB708;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px; 
+}
+
+.blogPostCard-socials {
+    border: 8px solid #31F1FD; }
+    .blogPostCard-socials:before, .blogPostCard-socials:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-socials:before {
+      border-bottom: 8px solid #31F1FD;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-socials:after {
+      border-top: 8px solid #31F1FD;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-sales {
+    border: 8px solid #FF4F00; }
+    .blogPostCard-sales:before, .blogPostCard-sales:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-sales:before {
+      border-bottom: 8px solid #FF4F00;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-sales:after {
+      border-top: 8px solid #FF4F00;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-search-engine-optimization {
+    border: 8px solid #93FD31; }
+    .blogPostCard-search-engine-optimization:before, .blogPostCard-search-engine-optimization:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-search-engine-optimization:before {
+      border-bottom: 8px solid #93FD31;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-search-engine-optimization:after {
+      border-top: 8px solid #93FD31;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-content {
+    border: 8px solid #E62CAF; }
+    .blogPostCard-content:before, .blogPostCard-content:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-content:before {
+      border-bottom: 8px solid #E62CAF;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-content:after {
+      border-top: 8px solid #E62CAF;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-copywriting {
+    border: 8px solid #EDFD31; }
+    .blogPostCard-copywriting:before, .blogPostCard-copywriting:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-copywriting:before {
+      border-bottom: 8px solid #EDFD31;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-copywriting:after {
+      border-top: 8px solid #EDFD31;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-landing-page {
+    border: 8px solid #be123c; }
+    .blogPostCard-landing-page:before, .blogPostCard-landing-page:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-landing-page:before {
+      border-bottom: 8px solid #be123c;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-landing-page:after {
+      border-top: 8px solid #be123c;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-retention {
+    border: 8px solid #7FFFD4; }
+    .blogPostCard-retention:before, .blogPostCard-retention:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-retention:before {
+      border-bottom: 8px solid #7FFFD4;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-retention:after {
+      border-top: 8px solid #7FFFD4;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-brand {
+    border: 8px solid #a78bfa; }
+    .blogPostCard-brand:before, .blogPostCard-brand:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-brand:before {
+      border-bottom: 8px solid #a78bfa;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-brand:after {
+      border-top: 8px solid #a78bfa;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-referral {
+    border: 8px solid #FCB0F3; }
+    .blogPostCard-referral:before, .blogPostCard-referral:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-referral:before {
+      border-bottom: 8px solid #FCB0F3;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-referral:after {
+      border-top: 8px solid #FCB0F3;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-creative {
+    border: 8px solid #8F30E4; }
+    .blogPostCard-creative:before, .blogPostCard-creative:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-creative:before {
+      border-bottom: 8px solid #8F30E4;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-creative:after {
+      border-top: 8px solid #8F30E4;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+.blogPostCard-public-relations {
+    border: 8px solid #4324FB; }
+    .blogPostCard-public-relations:before, .blogPostCard-public-relations:after {
+      display: block;
+      position: absolute;
+      content: "";
+      width: 70%; }
+    .blogPostCard-public-relations:before {
+      border-bottom: 8px solid #4324FB;
+      border-right: 36px solid transparent;
+      top: -15px;
+      left: -8px; }
+    .blogPostCard-public-relations:after {
+      border-top: 8px solid #4324FB;
+      border-left: 36px solid transparent;
+      bottom: -15px;
+      right: -8px;  
+}
+
+// redirect icon
+
+.blogPost_redirect__icon-advertisement {
+    border: 1px solid #FFB708;
+    svg {
+        color: #FFB708;
+    }
+}
+
+.blogPost_redirect__icon-socials  {
+    border: 1px solid #31F1FD;
+    svg {
+        color: #31F1FD;
+    }
+}
+
+.blogPost_redirect__icon-sales  {
+    border: 1px solid #FF4F00;
+    svg {
+        color: #FF4F00;
+    }
+}
+
+.blogPost_redirect__icon-search-engine-optimization  {
+    border: 1px solid #BBF3DD;
+    svg {
+        color: #BBF3DD;
+    }
+}
+
+.blogPost_redirect__icon-content  {
+    border: 1px solid #E62CAF;
+    svg {
+        color: #E62CAF;
+    }
+}
+
+.blogPost_redirect__icon-copywriting  {
+    border: 1px solid #EDFD31;
+    svg {
+        color: #EDFD31;
+    }
+}
+
+.blogPost_redirect__icon-landing-page  {
+    border: 1px solid #be123c;
+    svg {
+        color: #be123c;
+    }
+}
+
+.blogPost_redirect__icon-retention  {
+    border: 1px solid #7FFFD4;
+    svg {
+        color: #7FFFD4;
+    }
+}
+
+.blogPost_redirect__icon-brand  {
+    border: 1px solid #a78bfa;
+    svg {
+        color: #a78bfa;
+    }
+}
+
+.blogPost_redirect__icon-referral  {
+    border: 1px solid #FCB0F3;
+    svg {
+        color: #FCB0F3;
+    }
+}
+
+.blogPost_redirect__icon-creative  {
+    border: 1px solid #8F30E4;
+    svg {
+        color: #8F30E4;
+    }
+}
+
+.blogPost_redirect__icon-public-relations  {
+    border: 1px solid #4324FB;
+    svg {
+        color: #4324FB;
+    }
+}
+
+
+
+
+
+
+

@@ -9,6 +9,8 @@
 
 @tailwind utilities;
 
+@import 'additional';
+
 /*
 // importing local fonts
 @font-face {
@@ -115,217 +117,6 @@ body {
     padding-top: 20px;
 }
 
-// Styling for blog post card
-
-.blogPostCard-advertisement {
-    border: 12px solid #FFF9A3; }
-    .blogPostCard-advertisement:before, .blogPostCard-advertisement:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-advertisement:before {
-      border-bottom: 12px solid #FFF9A3;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-advertisement:after {
-      border-top: 12px solid #FFF9A3;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-socials {
-    border: 12px solid #F7B8ED; }
-    .blogPostCard-socials:before, .blogPostCard-socials:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-socials:before {
-      border-bottom: 12px solid #F7B8ED;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-socials:after {
-      border-top: 12px solid #F7B8ED;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-sales {
-    border: 12px solid #B2BAFF; }
-    .blogPostCard-sales:before, .blogPostCard-sales:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-sales:before {
-      border-bottom: 12px solid #B2BAFF;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-sales:after {
-      border-top: 12px solid #B2BAFF;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-search-engine-optimization {
-    border: 12px solid #BBF3DD; }
-    .blogPostCard-search-engine-optimization:before, .blogPostCard-search-engine-optimization:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-search-engine-optimization:before {
-      border-bottom: 12px solid #BBF3DD;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-search-engine-optimization:after {
-      border-top: 12px solid #BBF3DD;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-content {
-    border: 12px solid #FFC3C3; }
-    .blogPostCard-content:before, .blogPostCard-content:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-content:before {
-      border-bottom: 12px solid #FFC3C3;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-content:after {
-      border-top: 12px solid #FFC3C3;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-copywriting {
-    border: 12px solid #A9EDFF; }
-    .blogPostCard-copywriting:before, .blogPostCard-copywriting:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-copywriting:before {
-      border-bottom: 12px solid #A9EDFF;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-copywriting:after {
-      border-top: 12px solid #A9EDFF;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-landing-page {
-    border: 12px solid #FFC3C3; }
-    .blogPostCard-landing-page:before, .blogPostCard-landing-page:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-landing-page:before {
-      border-bottom: 12px solid #FFC3C3;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-landing-page:after {
-      border-top: 12px solid #FFC3C3;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-retention {
-    border: 12px solid #BBF3DD; }
-    .blogPostCard-retention:before, .blogPostCard-retention:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-retention:before {
-      border-bottom: 12px solid #BBF3DD;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-retention:after {
-      border-top: 12px solid #BBF3DD;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-brand {
-    border: 12px solid #AFB7FF; }
-    .blogPostCard-brand:before, .blogPostCard-brand:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-brand:before {
-      border-bottom: 12px solid #AFB7FF;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-brand:after {
-      border-top: 12px solid #AFB7FF;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-referral {
-    border: 12px solid #F9C5F0; }
-    .blogPostCard-referral:before, .blogPostCard-referral:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-referral:before {
-      border-bottom: 12px solid #F9C5F0;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-referral:after {
-      border-top: 12px solid #F9C5F0;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
-.blogPostCard-creative {
-    border: 12px solid #FFFAB1; }
-    .blogPostCard-creative:before, .blogPostCard-creative:after {
-      display: block;
-      position: absolute;
-      content: "";
-      width: 70%; }
-    .blogPostCard-creative:before {
-      border-bottom: 12px solid #FFFAB1;
-      border-right: 36px solid transparent;
-      top: -18px;
-      left: -12px; }
-    .blogPostCard-creative:after {
-      border-top: 12px solid #FFFAB1;
-      border-left: 36px solid transparent;
-      bottom: -18px;
-      right: -12px; 
-}
-
 .blogCard_taxonomy__item {
     color: #231f20;
     background-color: #FFF;
@@ -392,83 +183,6 @@ body {
     transform: rotate(320deg);
     border-radius: 50%;
     padding: 10px 12px;
-}
-
-.blogPost_redirect__icon-advertisement {
-    border: 1px solid #FFF9A3;
-    svg {
-        color: #FFF9A3;
-    }
-}
-
-.blogPost_redirect__icon-socials  {
-    border: 1px solid #F7B8ED;
-    svg {
-        color: #F7B8ED;
-    }
-}
-
-.blogPost_redirect__icon-sales  {
-    border: 1px solid #B2BAFF;
-    svg {
-        color: #B2BAFF;
-    }
-}
-
-.blogPost_redirect__icon-search-engine-optimization  {
-    border: 1px solid #BBF3DD;
-    svg {
-        color: #BBF3DD;
-    }
-}
-
-.blogPost_redirect__icon-content  {
-    border: 1px solid #FFC3C3;
-    svg {
-        color: #FFC3C3;
-    }
-}
-
-.blogPost_redirect__icon-copywriting  {
-    border: 1px solid #A9EDFF;
-    svg {
-        color: #A9EDFF;
-    }
-}
-
-.blogPost_redirect__icon-landing-page  {
-    border: 1px solid #FFC3C3;
-    svg {
-        color: #FFC3C3;
-    }
-}
-
-.blogPost_redirect__icon-retention  {
-    border: 1px solid #BBF3DD;
-    svg {
-        color: #BBF3DD;
-    }
-}
-
-.blogPost_redirect__icon-brand  {
-    border: 1px solid #AFB7FF;
-    svg {
-        color: #AFB7FF;
-    }
-}
-
-.blogPost_redirect__icon-referral  {
-    border: 1px solid #F9C5F0;
-    svg {
-        color: #F9C5F0;
-    }
-}
-
-.blogPost_redirect__icon-creative  {
-    border: 1px solid #FFFAB1;
-    svg {
-        color: #FFFAB1;
-    }
 }
 
 .newsletterRedirect_wrapper {
@@ -549,17 +263,20 @@ body {
     border-right: 10px solid #18202D;
 }
 
-.categoriesSidebar_conversion__socialMedia {
-    a {
-        border: 1px solid #FFB708;
-        border-radius: 5px;
-
-        img {
-            padding: 3px;
-        }
-    }
+a {
+    cursor: pointer;
 }
 
+.categoriesSidebar_newsletter__wrapper {
+    cursor: pointer;
+}
+
+.categoriesSidebar_overlay {
+    width: 12000px;
+    height: 110vh;
+    left: -50vh;
+    top: -10vh;
+}
 
 
 

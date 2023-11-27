@@ -2,14 +2,9 @@
 
 
 <div class="homeInner bg-white h-fit min-h-screen container mx-auto">
-    <a class="modalRedirect_close__button cursor-pointer hidden">
-        <i class="fa-solid fa-x absolute md:top-24 lg:top-12 xl:top-8 right-10 text-2xl z-50"></i>
-    </a>
-    <a class="modalRedirect hidden">
-    </a>
-    <div class="grid lg:grid-cols-6 gap-1 h-max pb-10">
+    <div class="grid lg:grid-cols-7 gap-1 h-max pb-10">
         <!-- LEFT SIDE -->
-        <div class="hidden lg:block md:col-span-2 lg:col-span-1 relative z-50">
+        <div class="hidden lg:block md:col-span-2 lg:col-span-1 relative z-10">
             <div class="leftSidebar">
                 <!-- Logo -->
                 <div class="logoWrapper">
@@ -26,12 +21,12 @@
                     </a>
                 </div>
                 <!-- Categories in the sidebar -->
-                <div class="categoriesSidebar flex items-center justify-start min-h-[90vh]">
-                    <div class="sidebar_indicator relative h-[240px] w-[80px]">
+                <div class="categoriesSidebar flex items-center justify-start min-h-[90vh] relative">
+                <div class="nonvisible categoriesSidebar_overlay z-10 absolute"></div>
+                    <div class="sidebar_indicator relative z-50 h-[240px] w-[80px]">
                             <!-- Filter button -->
                             <div class="categoriesSidebar_filter">
-                                <div class="categoriesSidebar_filter__button h-[30px] w-[30px] p-2 absolute top-6 left-4">
-                                </div>
+                                <a type="button" class="categoriesSidebar_filter__button h-[30px] w-[30px] p-2 absolute top-6 left-4"></a>
                                 <!-- Filter popup -->
                                 <div class="nonvisible categoriesSidebar_filter__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
                                     <div class="categoriesSidebar_popup__content p-4">
@@ -57,7 +52,7 @@
                                 </div>
                             </div>
                             <!-- Newsletter Button -->
-                            <div class="categoriesSidebar_newsletter__wrapper">
+                            <div class="newsletterModal_open categoriesSidebar_newsletter__wrapper">
                             <?php 
                                 $args = array(
                                     'page_id' => 214,
@@ -92,10 +87,9 @@
                             <!-- Conversion Button -->
                             <div class="categoriesSidebar_conversion">
                                 <!-- Conversion Button -->
-                                <div class="categoriesSidebar_conversion__button h-[30px] w-[30px] p-2 absolute bottom-6 left-4">
-                                </div>
+                                <a type="button" class="categoriesSidebar_conversion__button h-[30px] w-[30px] p-2 absolute bottom-6 left-4"></a>
                                 <!-- Conversion Popup -->
-                                <div class="hidden categoriesSidebar_conversion__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
+                                <div class="nonvisible categoriesSidebar_conversion__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
                                     <div class="categoriesSidebar_popup__content p-4">
                                         <div class="categoriesSidebar_conversion__pages">
                                         <?php 
@@ -152,7 +146,7 @@
         </div>
         <!-- RIGHT SIDE -->
         <!-- "Join the newsletter" button in header -->
-        <div class="md:col-span-5 lg:col-span-5">
+        <div class="md:col-span-5 lg:col-span-6">
             <div class="hidden md:grid gap-4 h-20 flex justify-end">
                 <button class="newsletterModal_open newsletterRedirect_wrapper h-[75px] w-[324px]">
                 </button>
@@ -160,7 +154,7 @@
             <!-- Blog posts -->
             <div id="response"  class="ajax-posts">
                 <div class="blogPostsWrapper mt-24 md:mt-3 lg:mt-10 xl:mt-1">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:mr-5 mx-4 lg:mx-0">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:mr-5 mx-6 lg:mx-4 lg:mx-0">
                                 <?php 
                                     $i = 1;
                                     // The Loop
