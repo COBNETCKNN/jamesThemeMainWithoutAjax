@@ -2,11 +2,7 @@
 @tailwind base;
 @tailwind components;
 
-@font-face {
-    font-family: 'Unbounded';
-    src: local('Unbounded'), url(./fonts/Unbounded-Medium.ttf) format('ttf');
-  }
-
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300&display=swap');
 @tailwind utilities;
 
 @import 'additional';
@@ -111,10 +107,10 @@ body {
 }
 
 .blogPostCard_title {
-    font-size: 21px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
 }
 
 .blogCard_taxonomy__item {
@@ -127,7 +123,6 @@ body {
     line-height: 40px;
     display: table;
     position: absolute;
-    right: -12px;
     bottom: 0;
     padding-right: 22px;
     padding-left: 2px; }
@@ -186,13 +181,13 @@ body {
 }
 
 .newsletterRedirect_wrapper {
-    background-image: url('../assets/images/signup-button.svg');
+    background-image: url('../assets/images/newsletter-right.svg');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .sidebar_indicator {
-    background-image: url('../assets/images/sidebar-indicator.jpg');
+    background-image: url('../assets/images/sidebar-indicator.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -207,13 +202,6 @@ body {
     background-image: url('../assets/images/icon-suitcase.svg');
     background-size: contain;
     background-repeat: no-repeat;
-}
-
-.categoriesSidebar_newsletter__img {
-    img {
-        border-radius: 50%;
-        border: 2px solid #FFB708;
-    }
 }
 
 .categoriesSidebar_newsletter__wrapper {
@@ -276,6 +264,19 @@ a {
     height: 110vh;
     left: -50vh;
     top: -10vh;
+}
+
+.newsletterNavbar_content__wrapper {
+    background-color: #4324FB;
+}
+
+.newsletterNavbar_content__wrapper:hover  {
+    cursor: pointer;
+}
+
+.close_mobileCategories__wrapper {
+    border: 2px solid #93FD31;
+    border-radius: 50%;
 }
 
 
@@ -358,38 +359,12 @@ a {
     top: 1px;
 }
 
-.modalPost_thumbnail__blured {
-    width: 100%;
-    height: 250px;
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(5px);  position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    background-size: cover;
-}
-
-.modalPost_thumbnail {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 9;
-    width: 450px;
-}
-
 .blogPostCard_title__modal {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -20%);
     top: 40%;
     width: 100%;
-}
-
-.modalPost_thumbnail__wrapper {
-    height: 250px;
 }
 
 .grid-item {
@@ -484,7 +459,6 @@ a {
 
   .singleModal {
     background-color: #fff;
-    border-radius: 5px;
     display: none;
     height: 90%;
     left: 50%;
@@ -520,7 +494,6 @@ a {
     transform:translate(-50%,-50%);
     background: #fff;
     width: 420px;
-    height: 75%;
     text-align: center;
     box-sizing:border-box;
     box-shadow:0 0 20px rgba(0,0,0,.2);
@@ -805,6 +778,14 @@ border-radius: 2px;
     border: 2px solid #93FD31;
 }
 
+.singleBlogPost_closing__icon:hover {
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    border: 2px solid #93FD31;
+    color: black;
+}
+
 
   @media (max-width: 768px) { 
     .newsletterModal {
@@ -821,8 +802,12 @@ border-radius: 2px;
         box-shadow:0 0 20px rgba(0,0,0,.2);
     }
 
+    .newsletterModal_topContent {
+        height: 30vh;
+    }
+
     .newsletterModal_testimonials {
-        height: 40dvh;
+        height: 60vh;
     }
 
     .modal {
@@ -952,7 +937,6 @@ border-radius: 2px;
 
     .newsletterModal_testimonials {
         overflow-y: scroll; 
-        height: 30vh;
       }
 
     .modal {
@@ -981,12 +965,11 @@ border-radius: 2px;
         overflow-y: auto;
         outline: 0;
         position: fixed;
-        top: 0%;
+        top: 10%;
         left: 50%;
         transform: translateX(-50%);
         height: 85%;
         background-color: white;
-        border-radius: 5px;
         }
 
     .modal_contentArea__wrapper{
@@ -1024,10 +1007,6 @@ border-radius: 2px;
     .newsletterModal_testimonials {
         overflow-y: scroll; 
         height: 38vh;
-      }
-
-      .singleModal {
-        border: 12px solid white;
       }
 }
 

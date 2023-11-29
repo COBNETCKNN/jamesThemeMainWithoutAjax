@@ -12,7 +12,7 @@ $adsQuery = new WP_Query($adArgs);
 while($adsQuery->have_posts()){
     $adsQuery->the_post(); ?>
 
-    <div class="blogCardBlackOverlay flex justify-center items-center">
+    <div class="blogCardBlackOverlay flex justify-center items-center border-dashed border-2 border-sky-700">
         <div class="col-span-1">
         <?php
 
@@ -38,7 +38,7 @@ while($adsQuery->have_posts()){
         <div class="ads_text__wrapper flex justify-center font-medium text-sm text-center font-avenir text-avenir my-2 mx-3">
             <?php echo $adsText; ?>
         </div>
-        <div class="ads_button__wrapper flex justify-center my-2">
+        <div class="ads_button__wrapper flex justify-center my-2 uppercase">
             <a class="text-white font-avenir font-bold py-1.5 px-4 text-sm rounded-lg" target="_blank" href="<?php echo $adsButtonLink ?>" style="background-color:<?php echo $adsButtonBackgroundColor; ?>"><?php echo $adsButtonText; ?></a>
         </div>
 

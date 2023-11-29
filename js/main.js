@@ -29,6 +29,8 @@ jQuery(document).ready(function (jQuery) {
   /* Newsletter modal */
   jQuery(".newsletterModal_open").click(function () {
     jQuery(".newsletterModal").addClass("visible");
+    jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
+    jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
     jQuery('body').css('overflow', 'hidden');
   });
   jQuery(".newsletterModal_close").click(function () {
@@ -95,6 +97,8 @@ jQuery(document).ready(function (jQuery) {
   // new sidebar
   jQuery(".categoriesSidebar_filter__button").click(function () {
     jQuery(".categoriesSidebar_filter__popup").removeClass("nonvisible");
+    jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
+    jQuery(".newsletterModal").removeClass("visible");
     jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
     jQuery('body').css('overflow', 'hidden');
   });
@@ -105,12 +109,18 @@ jQuery(document).ready(function (jQuery) {
   });
   jQuery(".categoriesSidebar_conversion__button").click(function () {
     jQuery(".categoriesSidebar_conversion__popup").removeClass("nonvisible");
+    jQuery(".newsletterModal").removeClass("visible");
+    jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
     jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
     jQuery('body').css('overflow', 'hidden');
   });
   jQuery(".categoriesSidebar_overlay").click(function () {
     jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
     jQuery(".categoriesSidebar_overlay").addClass("nonvisible");
+    jQuery('body').css('overflow', 'auto');
+  });
+  jQuery(".categories_icon").click(function () {
+    jQuery(".modalRedirect").addClass("nonvisible");
     jQuery('body').css('overflow', 'auto');
   });
 });

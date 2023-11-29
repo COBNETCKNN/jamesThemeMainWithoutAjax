@@ -13,19 +13,19 @@
             while($newsletterPageQuery->have_posts()){
                 $newsletterPageQuery->the_post(); ?> 
                 <div class="newsletterModal_warpper mt-5 md:mt-10">
-                    <div class="newsletterModal_topContent">
-                        <div class="newsletterModal_content__warpper text-left font-avenir text-base font-normal px-5">
-                            <?php the_content(); ?>
-                        </div>
+                        <div class="newsletterModal_topContent">
+                            <div class="newsletterModal_content__warpper text-left font-avenir text-base font-normal px-5">
+                                <?php the_content(); ?>
+                            </div>
 
-                        <div class="newsletterModal_form py-10 px-5">
-                            <?php 
-                            $shortcode = get_field('newsletter_shortcode');
+                            <div class="newsletterModal_form py-10 px-5">
+                                <?php 
+                                $shortcode = get_field('newsletter_shortcode');
 
-                            echo do_shortcode($shortcode);
-                            ?>
+                                echo do_shortcode($shortcode);
+                                ?>
+                            </div>
                         </div>
-                    </div>
                     <div class="newsletterModal_testimonials">
 
                         <?php 

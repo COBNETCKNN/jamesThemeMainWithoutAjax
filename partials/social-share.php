@@ -13,21 +13,12 @@
     <div class="line hidden md:block"></div>
     <div class="share-social__title text-center font-semibold text-sm text-avenir uppercase font-avenir">Click icon to share</div>
     <div class="share-social_wrapper flex justify-center mt-5 md:mt-0">
-        <div class="modalContent_sociaMedia__wrapper mx-3">
-            <a href="<?php echo $facebookUrl; ?>" target="_blank">
-                <i class="fa-brands fa-square-facebook modalContent_socialShare__icon"></i>
-            </a>
-        </div>
-        <div class="modalContent_sociaMedia__wrapper mx-3">
-            <a href="<?php echo $twitterUrl; ?>" target="_blank">
-                <i class="fa-brands fa-x-twitter modalContent_socialShare__icon"></i>
-            </a>
-        </div>
-        <div class="modalContent_sociaMedia__wrapper mx-3">
-            <a href="<?php echo $linkedInUrl; ?>" target="_blank">
-                <i class="fa-brands fa-linkedin modalContent_socialShare__icon"></i>
-            </a>
-        </div>
+        <!-- Facebook sharing icon -->
+        <a type="button" href="<?php echo $facebookUrl; ?>" target="_blank" class="modalContent_sociaMedia modalContent_sociaMedia__facebook mx-3"></a>
+        <!-- Twitter sharing icon -->
+        <a href="<?php echo $twitterUrl; ?>" target="_blank" class="modalContent_sociaMedia modalContent_sociaMedia__twitter mx-3"></a>
+        <!-- Linkedin sharing icon -->
+        <a href="<?php echo $linkedInUrl; ?>" target="_blank" class="modalContent_sociaMedia modalContent_sociaMedia__linkedin mx-3"></a>
     </div>
 
     <div class="line hidden md:block"></div>
