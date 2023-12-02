@@ -30,18 +30,20 @@ jQuery(document).ready(function(jQuery){
         }
     });
 
-    /* Newsletter modal */
+    /* Newsletter modal 
     jQuery(".newsletterModal_open").click(function(){
         jQuery(".newsletterModal").addClass("visible");
         jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
         jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
-        jQuery('body').css('overflow', 'hidden');
+        jQuery('body').css('position', 'fixed');
+        jQuery('.mobile-menu').css('margin-left', '8px');
         });
         
     jQuery(".newsletterModal_close").click(function(){
         jQuery(".newsletterModal").removeClass("visible");
-        jQuery('body').css('overflow', 'auto');
-    });
+        jQuery('body').css('position', 'static');
+        jQuery('.mobile-menu').css('margin-left', '0px');
+    }); */
 
     // hamburger menu for mobile
     (function (event) {
@@ -115,12 +117,14 @@ jQuery(document).ready(function(jQuery){
         jQuery(".newsletterModal").removeClass("visible");
         jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
         jQuery('body').css('overflow', 'hidden');
+        jQuery('body').css('margin-left', '-8px');
     });
 
     jQuery(".categoriesSidebar_overlay").click(function(){
         jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
         jQuery(".categoriesSidebar_overlay").addClass("nonvisible");
         jQuery('body').css('overflow', 'auto');
+        jQuery('body').css('margin-left', '0px');
     });
 
     jQuery(".categoriesSidebar_conversion__button").click(function(){
@@ -129,21 +133,82 @@ jQuery(document).ready(function(jQuery){
         jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
         jQuery(".categoriesSidebar_overlay").removeClass("nonvisible");
         jQuery('body').css('overflow', 'hidden');
+        jQuery('body').css('margin-left', '-8px');
     });
 
     jQuery(".categoriesSidebar_overlay").click(function(){
         jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
         jQuery(".categoriesSidebar_overlay").addClass("nonvisible");
         jQuery('body').css('overflow', 'auto');
+        jQuery('body').css('margin-left', '0px');
     });
 
     jQuery(".categories_icon").click(function(){
         jQuery(".modalRedirect").addClass("nonvisible");
-        jQuery('body').css('overflow', 'auto');
+        jQuery('body').css('overflow', 'hidden');
     });
+
+    //scroll animation for logo 
+
+    if (window.innerWidth > 1024 ) {
+
+    }
+
+    if(jQuery(window).width() >= 1024) {
+        jQuery(window).scroll(function() {    
+
+            var logo = jQuery(".logo");
+            var secondLogo = jQuery('.oliver_logo__small');
+    
+            var scroll = jQuery(window).scrollTop();
+            if (scroll >= 50) {
+                logo.addClass("hidden");
+                secondLogo.removeClass("nonvisible");
+            } else {
+                logo.removeClass("hidden");
+                secondLogo.addClass("nonvisible");
+            }
+        });
+    }
+
 
 });
 
 function goBack() {
     window.history.back();
   }
+
+/* Newsletter modal */
+jQuery(document).ready(function() {
+    if (jQuery(window).width() < 1840) {
+
+        jQuery(".newsletterModal_open").click(function(){
+            jQuery(".newsletterModal").addClass("visible");
+            jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
+            jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
+            jQuery('body').css('overflow', 'hidden');
+            window.history.pushState(null, null, 'newsletter');
+            });
+            
+        jQuery(".newsletterModal_close").click(function(){
+            jQuery(".newsletterModal").removeClass("visible");
+            jQuery('body').css('overflow', 'auto');
+        });
+    } else {
+        jQuery(".newsletterModal_open").click(function(){
+            jQuery(".newsletterModal").addClass("visible");
+            jQuery(".categoriesSidebar_filter__popup").addClass("nonvisible");
+            jQuery(".categoriesSidebar_conversion__popup").addClass("nonvisible");
+            jQuery('body').css('overflow', 'hidden');
+            jQuery('.mobile-menu').css('margin-left', '8px');
+            jQuery('body').css('margin-left', '-8px');
+            });
+            
+        jQuery(".newsletterModal_close").click(function(){
+            jQuery(".newsletterModal").removeClass("visible");
+            jQuery('body').css('overflow', 'auto');
+            jQuery('body').css('margin-left', '0px');
+            jQuery('.mobile-menu').css('margin-left', '0px');
+        });
+    }
+});

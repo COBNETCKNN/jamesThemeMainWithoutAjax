@@ -71,26 +71,15 @@
             </div>
         </div>
     </div>
-    <!-- Content Modal -->
-    <div id="modal" class="modal relative">
-        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        <div class="modalClose_wrapper p-2 md:hidden absolute z-10 top-2 right-3">
-            <a href="#!" class="modalPost_close">
-                <i class="fa-solid fa-x text-lg text-white text-2xl"></i>
-            </a>
-        </div>
-        <div class="modal-content">
-            <div id="modal-content-placeholder"></div>
-            
-        </div>
-    </div>
     <!-- Newsletter modal -->
     <?php get_template_part('partials/newsletter', 'modal'); ?>
     <!-- Mobile categories -->
     <div class="mobileCategories_wrapper hidden w-full h-fit bg-darkBlue absolute bottom-0 right-0">
     <div class="">
-    <a href="#" class="close_mobileCategories__wrapper absolute top-6 right-5 py-1 px-2">
-        <i class="fa-solid fa-x text-2xl text-white"></i>
+    <a href="#" class="close_mobileCategories__wrapper absolute top-6 right-5 py-1.5 px-2">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.021 512.021" style="enable-background:new 0 0 512.021 512.021;" xml:space="preserve" width="512" height="512">
+            <g><path d="M301.258,256.01L502.645,54.645c12.501-12.501,12.501-32.769,0-45.269c-12.501-12.501-32.769-12.501-45.269,0l0,0   L256.01,210.762L54.645,9.376c-12.501-12.501-32.769-12.501-45.269,0s-12.501,32.769,0,45.269L210.762,256.01L9.376,457.376   c-12.501,12.501-12.501,32.769,0,45.269s32.769,12.501,45.269,0L256.01,301.258l201.365,201.387   c12.501,12.501,32.769,12.501,45.269,0c12.501-12.501,12.501-32.769,0-45.269L301.258,256.01z"/></g>
+        </svg>
     </a>
     </div>
     <div class="customTaxonomyWrapper mb-6">
@@ -105,8 +94,8 @@
                     foreach ($categories as $category) {
                         $category_link = get_category_link($category->term_id);
                         
-                        echo '<li class="py-0.5 text-avenir font-bold text-xl p-5">
-                        <a class="text-white category-'. $category->slug .'" href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a>
+                        echo '<li class="py-0.5 text-avenir font-bold text-base p-5">
+                        <a class="text-white font-avenir category-'. $category->slug .'" href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a>
                         </li>';
                     }
 

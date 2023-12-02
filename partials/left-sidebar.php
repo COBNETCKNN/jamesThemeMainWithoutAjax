@@ -2,6 +2,7 @@
     <!-- Logo -->
     <div class="logoWrapper">
         <a href="<?php echo site_url(); ?>">
+        <div class="logo">
             <?php 
                 $custom_logo_id = get_theme_mod( 'custom_logo' );
                 $logo = wp_get_attachment_image_src( $custom_logo_id , 'logo-size' );
@@ -11,6 +12,10 @@
                     echo '<h1>' . get_bloginfo('name') . '</h1>';
                 }
             ?>
+        </div>
+        <div class="secondLogo w-[100px] flex justify-center">
+           <img class="nonvisible oliver_logo__small" src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/images/oliver-logo-small.png" alt="">
+        </div>
         </a>
     </div>
     <!-- Categories in the sidebar -->
@@ -23,17 +28,17 @@
                     <!-- Filter popup -->
                     <div class="nonvisible categoriesSidebar_filter__popup bg-darkBlue w-[170px] h-fit rounded-2xl">
                         <div class="categoriesSidebar_popup__content p-4">
-                            <h4 class="categoriesSidebar_filter__heading font-avenir text-white text-lg font-bold uppercase border-b-2 border-gray-500 mb-2">Filters</h4>
+                            <span class="categoriesSidebar_filter__heading font-avenir text-white text-base font-bold uppercase border-b-2 border-gray-500 pb-2">Filters</span>
                             <?php
                                 $categories = get_categories();
 
                                 if (!empty($categories)) {
-                                    echo '<ul>';
+                                    echo '<ul class="mt-4">';
                                     
                                     foreach ($categories as $category) {
                                         $category_link = get_category_link($category->term_id);
                                         
-                                        echo '<li class="py-0.5 text-avenir font-avenir text-base">
+                                        echo '<li class="py-0.5 text-avenir font-avenir text-base font-normal">
                                         <a class="text-white category-'. $category->slug .'" href="' . esc_url($category_link) . '">' . esc_html($category->name) . '</a>
                                         </li>';
                                     }
@@ -64,7 +69,7 @@
                                 <div class="categoriesSidebar_newsletter__img flex justify-center">
                                     <div class="newsletter_image">
                                         <?php
-                                            the_post_thumbnail( 'thumbnail' );
+                                            the_post_thumbnail( 'full' );
                                         ?>
                                     </div>
                                     <div class="newsletter_image__hover nonvisible">
@@ -89,7 +94,7 @@
                                 wp_nav_menu(
                                     array(
                                     'theme_location' => 'header-menu',
-                                    'container_class' => 'text-white font-bold text-lg font-avenir',
+                                    'container_class' => 'sidebarLeft_menu__wrapper text-white font-bold text-base font-avenir',
                                     )
                                 );
                                 ?>

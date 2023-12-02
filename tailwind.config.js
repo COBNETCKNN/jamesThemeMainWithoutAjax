@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         avenir: ['Unbounded', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       colors: { 
         'avenir': '#030212',
